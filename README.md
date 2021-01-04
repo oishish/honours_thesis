@@ -1,3 +1,8 @@
+My undergraduate honours thesis based on the following template:
+
+
+
+
 uci-thesis-latex
 ================
 
