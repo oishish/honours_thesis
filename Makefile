@@ -1,48 +1,67 @@
-PROJ := thesis
+          NAME1 = diss
+       PRODUCT1 = $(NAME1).pdf
+     TEXSOURCE1 = $(NAME1).tex \
+		    abstract.tex ack.tex glossary.tex intro.tex \
+		    ubcdiss.cls
+           BBL1 = $(NAME1).bbl
 
-SRC	:= $(PROJ).tex
-DEP	:= $(wildcard *.tex *.bib) ucithesis.cls
+#         NAME2 =
+#      PRODUCT2 = $(NAME2).pdf
+#    TEXSOURCE2 = $(NAME2).tex 
+#          BBL2 = $(NAME2).bbl
 
-OUT	:= .
+      BIBINPUTS = biblio.bib
 
-DVI	:= $(OUT)/$(PROJ).dvi
-PDF	:= $(OUT)/$(PROJ).pdf
+     PDFFIGURES = $(BUILTPDFFIGURES) ${PNGFIGURES}
+     PNGFIGURES = 
+     GIFFIGURES = 
+     SVGFIGURES = 
+# Following is for Berkeley Make syntax:
+#BUILTPDFFIGURES = \
+#		    ${PNGFIGURES:C/\.png/.pdf/g} \
+#		    ${GIFFIGURES:C/\.gif/.pdf/g} \
+#		    ${SVGFIGURES:C/\.svg/.pdf/g}
 
-# Can also use pdflatex, if preferred
-CMDLATEX := latex -output-directory=$(OUT)
-CMDPDF   := dvipdf
+all: doc.pdf $(PRODUCT1)
 
-PDFVIEWER := evince
+$(NAME1).pdf: $(TEXSOURCE1) $(BBL1) $(PDFFIGURES)
+$(NAME1).dvi: $(TEXSOURCE1) $(BBL1) $(EPSFIGURES)
+$(NAME1).bbl: $(TEXSOURCE1) $(BIBINPUTS) $(PDFFIGURES)
 
-all: $(DVI) $(PDF)
+#$(NAME2).pdf: $(TEXSOURCE2) $(BBL2) $(BUILTPDFFIGURES)
+#$(NAME2).dvi: $(TEXSOURCE2) $(BBL2) $(BUILTEPSFIGURES)
+#$(NAME2).bbl: $(TEXSOURCE2) $(BIBINPUTS) $(BUILTEPSFIGURES) $(BUILTPDFFIGURES)
 
-$(PDF) : $(DVI)
-	$(CMDPDF) $(DVI) $(PDF)
+clean:
+	$(RM) ${BUILTPDFFIGURES} $(NAME1).aux $(NAME1).dvi \
+	    $(NAME1).log $(NAME1).blg $(NAME1).bbl $(NAME1).out \
+	    $(NAME1).toc $(NAME1).lof $(NAME1).lot $(NAME1).brf \
+            *.aux
 
-# OUT directory must be ordered before we generate output
-$(OUT)/%.dvi: %.tex | $(OUT)
-	$(CMDLATEX) $<
-	bibtex $(OUT)/$(<:%.tex=%)
-	$(CMDLATEX) $<
-	$(CMDLATEX) $<	# Run LaTeX again to make sure all references are correct
+# configuration issues
+.SUFFIXES: .tex .pdf .bbl
 
-$(DVI) : $(DEP)
+PDFLATEX=	pdflatex
+BIBTEX=		bibtex
+XELATEX=	xelatex 
+LATEX=		latex
+BIBLATEX=	$(PDFLATEX)
+BIBTEX=		bibtex -min-crossref=1000
+RM=		rm -f
+MV=		mv
+CP=		cp -p
 
-# Create the OUT directory, if it doesn't exist
-$(OUT):
-	mkdir -p $@
+.tex.pdf:
+	$(PDFLATEX) $(LATEXFLAGS) $<
+	@while egrep -q 'LaTeX Warning:.*Rerun|Rerun to get' $*.log; do \
+	       echo $(PDFLATEX) $<; \
+	      $(PDFLATEX) $(LATEXFLAGS) $< || exit $$?; \
+	done
 
-show	: $(PDF)
-	$(PDFVIEWER) "$(PDF)"
+.tex.bbl: 
+	$(BIBLATEX) $(LATEXFLAGS) $<
+	$(BIBTEX) $*
+	$(RM) $*.aux $*.dvi $*.pdf
 
-clean	:
-	rm -rf $(OUT)/*.aux
-	rm -rf $(OUT)/*.bbl
-	rm -rf $(OUT)/*.blg
-	rm -rf $(OUT)/*.dvi
-	rm -rf $(OUT)/*.lof
-	rm -rf $(OUT)/*.log
-	rm -rf $(OUT)/*.lot
-	rm -rf $(OUT)/*.out
-	rm -rf $(OUT)/*.toc
-	rm -rf $(OUT)/*.pdf
+doc.pdf: diss.pdf
+	$(CP) diss.pdf doc.pdf
