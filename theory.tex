@@ -1,0 +1,24 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+\chapter{Theory}
+\label{ch:Theory}
+
+To measure the entropy of a system using a mesoscopic circuit, we use the Maxwell relation and resulting integral.
+
+\begin{equation}
+	\label{eqn:MR}
+	\left( \frac{\partial \mu }{\partial T} \right)_{p,N} = -\left( \frac{\partial S}{\partial N} \right)_{p,T} , \quad
+	\Delta S = \int_{\mu_1}^{\mu_2} \frac{dN(\mu)}{dT}\,\, d\mu
+\end{equation}
+
+
+In other words, by measuring the occupation of a quantum dot as a function of the chemical potential, $N(\mu)$, and varying temperature, $T$, we can derive the change in entropy, $\Delta S$ over that change in occupation.
+
+In systems with few degrees of freedom, the relevant discussion of entropy comes in the form of Boltzmann entropy, $S = k_b \ln \Omega$ with $\Omega$ being the number of available microstates~\cite{schroeder}. In Hartman et al.'s experiment, it was shown that the change in entropy as a quantum dot goes from an occupation of $0 \to 1$ electrons was $\Delta S = k_b \ln 2 - k_b \ln 1 = k_b \ln 2$ as the dot went from only having one possible state to having two possible spin states (spin up and spin down). In addition, it was shown that by applying a large magnetic field, Zeeman splitting of the energy levels in the dot eliminated this degeneracy causing $\Delta S = k_b \ln 1 - k_b \ln 1 = 0$.
+
+In practice, to measure the entropy of a small system using a mesoscopic circuit and the integral from Eqn.~\ref{eqn:MR} we have a few requirements. First, we assumed constant pressure in the Maxwell relation. In the context of a 2-dimensional electron gas (2DEG) with which our measurements are conducted, the dominating pressure at temperatures below the Fermi temperature, $T_F \approx 100$K is the degeneracy pressure~\cite{ashcroftmermin}, an incompressibility emerging from the Pauli exclusion principle disallowing fermions from occupying the same quantum state. In addition, by keeping energy fluctuations due to thermal energy, $k_bT$, much smaller than the spacing between energy levels in the dot, we ensure that random temperature fluctuations do not produce unpredictable energy level occupation.
+\endinput
+
+Any text after an \endinput is ignored.
+You could put scraps here or things in progress.
