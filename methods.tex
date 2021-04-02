@@ -6,8 +6,25 @@
 \section{Quantum dots in GaAs/AlGaAs heterostructures}
 \label{sec:qds}
 
-\section{The device}
+The focus of this section will be the theory of double (and single) quantum dots in the 2 dimensional electron gas hosted by AlGaAs/GaAs. The basis of this section will be the Fig. \ref{fig:dqd}. In addition, there will be a discussion of the energy scales at play in the system and those that are most important for our entropy measurements.
+
+\begin{figure}[h]
+\centering
+\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/dqd_temp.eps}}
+\caption{The states of the double quantum dot system are mapped out by charge sensing the occupation of both dots. The color indicates the derivative of the current through the charge sensor. Sudden changes in this current indicate state changes in the two dots, with larger changes (seen as darker on this plot) indicating changes in the probe dot, and smaller changes (slightly lighter on this plot) indicating changes in states in the impurity dot. The large squares indicate regions of constant state in the two dots and are labelled by [occupation main dot, occupation impurity dot].}
+\label{fig:dqd}       % Give a unique label to the figure. 
+\end{figure}
+
+\section{The device and measurement protocol}
 \label{sec:device}
+The measurement protocol as laid out in Fig.~\ref{fig:num_int} requires the ability to vary the temperature of the system. However, in practice, instability in the exact locations of $V_{mid}$ makes it difficult to accurately determine $\Delta S$ of the hot and cold curves independently. Because of this instability, it is necessary to oscillate between hot and cold as we measure over the transition. With this measurement scheme, any heating not localized on the device is not useful as it will take too long to equilibrate through the entirety of whatever larger system is being heated.
+
+We are pursuing multiple possible solutions for fast localized heating. The first is the technique employed by Hartman et al. and used in previous device designs which involves directly injecting hot electrons into the electron reservoir coupled to the probe dot. This can be done by running a current through a QPC (tuned to be fairly resistive) pointed into the electron reservoir. When the current is turned off the heat in the electron reservoir is dissipated by coupling to phonons and connection to a `cold' ground - i.e. a much larger bath of electrons at lower temperature. By turning on and off the current running through this resistive heater QPC, we can locally control the temperature of the electrons in the system. Another possible technique that could be employed to allow for fast localized heating is heating the crystalline lattice of the substrate. With this technique, the electron-phonon coupling in the electron reservoir would ensure that the electrons quickly thermalize. Resistive heating would most likely be used to heat the phonons, either by electron phonon coupling using a QPC which is electrically insulated from the device, or by building a resistor on top of the substrate using a very long wire with some finite resistance.
+
+Devices to complete this experiment will be built on GaAs/AlGaAs heterostructure which hosts a 2DEG (see Fig \ref{fig:algaas}). The 2DEG is electrostatically gated to allow for local control of the electron density i.e. by applying an electric field with an electrically isolated gate, the electron density of the 2DEG is controlled beneath this gate \cite{Kouwenhoven1997}. Ohmic contact is made with the 2DEG via a diffusive process of Ni/Au/Ge through the substrate. Gating structures will be defined using standard photolithography and electron beam lithography techniques.  
+
+The next part of this section will focus on breaking down the various gates in use on the device and their roles. Relevant length scales, etc. will be discussed. This section is focussed around Fig. \ref{fig:device}. Connections will be made to the previous section, pointing out the energy scales in our system and how they were calculated.
+
 \begin{figure}[h]
 \centering
 \resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/small_dots_2.eps}}
@@ -18,42 +35,16 @@
 \section{Results}
 \label{sec:results}
 
+The primary results are summarized in Fig. \ref{fig:results1}. These show the main focus of this thesis - that the entropy of a capacitively coupled quantum system can be probed directly within this scheme. More to be included in this section is a full explanation of these results. Ongoing work is going on probing the system in interesting regimes - i.e. looking for entropic signatures of the Kondo effect. It is possible that results relating to the Kondo effect will be found before this thesis is submitted. 
+
+More specifically, we have shown that we can measure a change in entropy in the second, capacitively coupled quantum dot, as the electron in the probe dot forces the electron in the second dot out. Rather than seeing a constant entropy at $\ln 2$, we see our $\Delta S$ go to zero in the center of the 01 $\to$ 10 transition, when the probe dot pushes the second quantum dot from a degeneracy of two (1 occupied electron, either spin up or spin down) to a degeneracy of 1 (0 electrons). This is a net chance in entropy of -$\ln 2$ in the second dot, and a net change in entropy of +$\ln 2$ in the probe dot, which cancel one another out.
 \begin{figure}[h]
 \centering
 \resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/temp_results.eps}}
-\caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots. In (a) the dark region indicates the transition in the main quantum dot. White dots indicate the locations where entropy scans were taken. In (b) the $\Delta S$ of the transition at each white point is plotted. In the 0,0 $\to$ 1,0 regime, the $\Delta S$ is found to be roughly $\ln 2 = 0.69$ as expected from the spin degeneracy in the probe dot. In the central regime, where there is a full 0,1 $\to$ 1,0 transition, entropy is found to be around $\ln 2 - \ln2 = 0$ since the spin degeneracy of the impurity dot is simply replaced by the spin degeneracy in the probe dot. In the mixed regime, charge degeneracies of the transitions yield non-trivial $\Delta S$.}
+\caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots. In (a) the dark region indicates the transition in the main quantum dot. White dots indicate the locations where entropy scans were taken. In (b) the $\Delta S$ of the transition at each white point is plotted. In the 0,0 $\to$ 1,0 regime, the $\Delta S$ is found to be roughly $\ln 2 = 0.69$ as expected from the spin degeneracy in the probe dot. In the central regime, where there is a full 0,1 $\to$ 1,0 transition, entropy is found to be around $\ln 2 - \ln2 = 0$ since the spin degeneracy of the impurity dot is simply replaced by the spin degeneracy in the probe dot. In the mixed regime, charge degeneracies of the transitions yield non-trivial $\Delta S$. In (c) the dN/dT signals that were used to calculate these changes in entropy are shown, along with fits.}
 
 \label{fig:results1}       % Give a unique label to the figure. 
 \end{figure}
-
-\section{Comparison to theory}
-\label{sec:discussion}
-
-\section{Conclusion}
-\label{sec:conclusion}
-
-
-To carry out the integration from Eqn.~\ref{eqn:eqn1} in practice, it is necessary to have an accurate way of measuring the occupancy, $N$, of the probe dot. We measure $N$ by measuring the conductance $G_{sens}$ through a charge sensing quantum point contact (QPC) seen in Fig.~\ref{fig:device}. 
-
-Because of the proximity of this QPC, referred to as the charge sensor, to the probe dot very small electrostatic changes in the probe dot affect the conduction across the charge sensor~\cite{spintocharge}. As such, a larger $G_{sens}$ indicates fewer electrons in the probe dot, while a smaller $G_{sens}$ indicates more electrons in the probe dot. In effect, this means that $G_{sens}$ can be used to directly measure the occupancy of the dot as a function of various other quantities like chemical potential, $\mu$, or temperature, $T$. We use $V_{plunger}$ ($V_p$) shown in in Fig.~\ref{fig:device} to locally control the chemical potential of the dot. Varying the potential applied to this gate $V_p$ - and by extension the chemical potential in the dot - is our primary technique to control the occupancy of the dot. Based on this protocol, we can decompose Eqn.~\ref{eqn:eqn1} into the following quantities which can be determined experimentally.
-\begin{equation}
-	\label{eqn:eqn2}
-	\Delta S = \int_{\mu_1}^{\mu_2} d G_{sens}\frac{dN}{dG_{sens}} \frac{1}{dT} \,\,  d \mu
-\end{equation}
-This integral tells us that we can measure the change in entropy between two chemical potentials in the dot by measuring three quantities: $dN/dG_{sens}$, $dT$, and $dG_{sens}$ as a function of chemical potential. The first two quantities $dN/dG_{sens}$ and $dT$ are scaling factors that can be independently experimentally determined but do not depend on $\mu$ however the final quantity $dG_{sens}$ does depend on $\mu$ and so must be measured as $\mu$ is changed. Intuitively, $dG_{sens}$ is a measure of the difference between the occupancy of the dot at higher $T$ and lower $T$ - this is illustrated by the shading on the plots in Fig.~\ref{fig:num_int}. 
-
-
-\begin{figure}[h]
-\centering
-\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/numerical_integrated.eps}}
-\caption{ In (a) and (b) we show two examples of the measurement protocol where the occupancy of the probe dot is measured using $G_{sens}$. In each case, the occupancy is swept from $N - 1$ to $N$ electrons both at a higher temperature (red) and a lower temperature (blue), however in (a) this change in $N$ does not correspond to an entropy change in the system whereas in (b) we see a positive change in entropy of the system due to this change in occupancy. The inlaid plots show the cumulative integral of $d G_{sens}$ -- or the difference between hot and cold $G_{sens}$ curves. The entropy change of the system is measured by the value of this integral after the completion of this transition. $V_{mid}$ is labelled for each curve, notably, $V_{mid}$ is the same in the zero entropy case, but shifts in the finite entropy case. Figure from Hartman et al.}\label{fig:num_int}       % Give a unique label to the figure. 
-\end{figure}
-
-Using $V_{degeneracy}$ ($V_d$) the quantum system composed of the two dots (highlighted in yellow in Fig.~\ref{fig:device}) with a single electron confined within the system can be tuned between non-degenerate and doubly-degenerate. This works by first suppressing spin degrees of freedom with a large magnetic field then slowly changing the shape of the potential function separating the two dots using $V_d$. Once the potential barrier between the dots is large enough, the tunneling rate will become negligible.
-
-Capacitive coupling between the probe dot and the pair of dots can be tuned such that occupation of the probe dot suppresses the degeneracy of the two-dot system. This is because the lowest energy state will occur when the two electrons are farthest apart. Thus, we can tune the system to a state where there is an entropy change of the entire thermodynamic system independent (while no change in entropy of the probe dot itself) as the probe dot changes occupation. In this way, we will be able to detect a non zero value of entropy if we are able to detect changes in entropy of a capacitively coupled system. Specifically, by tuning the upper two dot system between non-degenerate and doubly degenerate, we will be able to see the change as entropy as the probe dot transitions $0 \to 1$ electrons vary from $\Delta S = 0$ to $\Delta S = -\ln2$, respectively.
-
-Preliminary evidence that we will be able to see a change in the measured entropy based on this coupling between the probe dot and another system comes from data collected on a different device coupled to an impurity in the substrate. In Fig~\ref{fig:sshape}, data from this device shows that as $V_d$ (effective) is varied, the entropy measured changes significantly. Because no parallel field is applied and the probe dot transitions from $0 \to 1$ electron, the probe dot on its own causes a change in entropy of $\Delta S/k_b = \ln 2 - \ln 1 = \ln 2 $. As such, changes in this entropy due to the impurity cause deviations in the entropy from this expected value. Clearly, this situation differs from the experiment we are proposing as there is either a positive or negative change in entropy depending on $V_d$ (effective). 
 
 \begin{figure}[h]
 \centering
@@ -64,11 +55,25 @@ Preliminary evidence that we will be able to see a change in the measured entrop
 \end{figure}
 
 
-The measurement protocol as laid out in Fig.~\ref{fig:num_int} requires the ability to vary the temperature of the system. However, in practice, instability in the exact locations of $V_{mid}$ makes it difficult to accurately determine $\Delta S$ of the hot and cold curves independently. Because of this instability, it is necessary to oscillate between hot and cold as we measure over the transition. With this measurement scheme, any heating not localized on the device is not useful as it will take too long to equilibrate through the entirety of whatever larger system is being heated.
 
-We are pursuing multiple possible solutions for fast localized heating. The first is the technique employed by Hartman et al. and used in previous device designs which involves directly injecting hot electrons into the electron reservoir coupled to the probe dot. This can be done by running a current through a QPC (tuned to be fairly resistive) pointed into the electron reservoir. When the current is turned off the heat in the electron reservoir is dissipated by coupling to phonons and connection to a `cold' ground - i.e. a much larger bath of electrons at lower temperature. By turning on and off the current running through this resistive heater QPC, we can locally control the temperature of the electrons in the system. Another possible technique that could be employed to allow for fast localized heating is heating the crystalline lattice of the substrate. With this technique, the electron-phonon coupling in the electron reservoir would ensure that the electrons quickly thermalize. Resistive heating would most likely be used to heat the phonons, either by electron phonon coupling using a QPC which is electrically insulated from the device, or by building a resistor on top of the substrate using a very long wire with some finite resistance.
+\section{Comparison to theory}
+\label{sec:discussion}
 
-Devices to complete this experiment will be built on GaAs/AlGaAs heterostructure which hosts a 2DEG (see Fig \ref{fig:algaas}). The 2DEG is electrostatically gated to allow for local control of the electron density i.e. by applying an electric field with an electrically isolated gate, the electron density of the 2DEG is controlled beneath this gate \cite{Kouwenhoven1997}. Ohmic contact is made with the 2DEG via a diffusive process of Ni/Au/Ge through the substrate. Gating structures will be defined using standard photolithography and electron beam lithography techniques.  
+The focus of this section will be a comparison between Fig. \ref{fig:results1} and Fig. \ref{fig:yigal_theory} and a qualitative explanation for the effects that we see. In addition, a discussion of the techniques used to make the theoretical predictions.
+
+\begin{figure}[h]
+\centering
+\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/yigal_theory.eps}}
+\caption{Theoretical calculations of $\Delta S$ across the 01 $\to$ 10 transition are show for various levels of interdot capacitive coupling to temperature ratios. Excellent alignment with experiment is achieved in the U/T = 6 are achieved.}
+
+\label{fig:yigal_theory}       % Give a unique label to the figure. 
+\end{figure}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Not yet sure what the focus of this section will be, still thinking about it. 
+
 
 \begin{figure}[h]
 \centering
