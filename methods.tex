@@ -1,19 +1,40 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 
-\chapter{Methods}
+\chapter{Capacitively coupled quantum dot}
 \label{ch:Methods}
-\section{Section}
-\label{sec:section}
+\section{Quantum dots in GaAs/AlGaAs heterostructures}
+\label{sec:qds}
 
-To carry out the integration from Eqn.~\ref{eqn:eqn1} in practice, it is necessary to have an accurate way of measuring the occupancy, $N$, of the probe dot. We measure $N$ by measuring the conductance $G_{sens}$ through a charge sensing quantum point contact (QPC) seen in Fig.~\ref{fig:device}. 
+\section{The device}
+\label{sec:device}
 \begin{figure}[h]
 \centering
-\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/device.eps}}
-\caption{ A top-down SEM image of an early prototype of the proposed device. Lighter regions are the gold gates, while darker regions are the GaAs substrate. The upper pair of quantum dots highlighted in yellow will be probed by the bottommost dot whose occupation is measured using $G_{sens}$. In this prototype, temperature oscillations would occur across the substrate with electrons in the reservoir connected to the probe dot heated via coupling to the phonons of the substrate. $V_p$ will be used to control the chemical potential, $\mu$, in the probe dot. In the upper pair of dots, similar gate structures allow for the system to be tuned to be doubly degenerate. $V_d$ is used to control the degeneracy of the upper two dot system. The indicates ohmic contact to the 2DEG.}
-
+\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/small_dots_2.eps}}
+\caption{ A top-down SEM image of the device measured in this experiment. Lighter gold regions are the gold gates, while darker regions are the GaAs substrate. A single quantum dot (right hand side) is probed by the leftmost dot whose occupation is measured using $I_{sens}$. In this device, temperature oscillations occur across electrons in a reservoir connected to the probe dot heated via a small thermocurrent through an adjacent quantum point contact. $V_{ACC}$ is used to control the chemical potential, $\mu$, in the probe dot. In the right hand of dot, similar gate structures, labelled $V_{IP}$ allow for the system to be tuned to be tuned degenerate with the probe dot. The X indicates ohmic contact to the 2DEG. The light red section indicates the thermal reservoir of the system. Greyed out gates were not used in this experiment.}
 \label{fig:device}       % Give a unique label to the figure. 
 \end{figure}
+
+\section{Results}
+\label{sec:results}
+
+\begin{figure}[h]
+\centering
+\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/temp_results.eps}}
+\caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots. In (a) the dark region indicates the transition in the main quantum dot. White dots indicate the locations where entropy scans were taken. In (b) the $\Delta S$ of the transition at each white point is plotted. In the 0,0 $\to$ 1,0 regime, the $\Delta S$ is found to be roughly $\ln 2 = 0.69$ as expected from the spin degeneracy in the probe dot. In the central regime, where there is a full 0,1 $\to$ 1,0 transition, entropy is found to be around $\ln 2 - \ln2 = 0$ since the spin degeneracy of the impurity dot is simply replaced by the spin degeneracy in the probe dot. In the mixed regime, charge degeneracies of the transitions yield non-trivial $\Delta S$.}
+
+\label{fig:results1}       % Give a unique label to the figure. 
+\end{figure}
+
+\section{Comparison to theory}
+\label{sec:discussion}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+To carry out the integration from Eqn.~\ref{eqn:eqn1} in practice, it is necessary to have an accurate way of measuring the occupancy, $N$, of the probe dot. We measure $N$ by measuring the conductance $G_{sens}$ through a charge sensing quantum point contact (QPC) seen in Fig.~\ref{fig:device}. 
+
 Because of the proximity of this QPC, referred to as the charge sensor, to the probe dot very small electrostatic changes in the probe dot affect the conduction across the charge sensor~\cite{spintocharge}. As such, a larger $G_{sens}$ indicates fewer electrons in the probe dot, while a smaller $G_{sens}$ indicates more electrons in the probe dot. In effect, this means that $G_{sens}$ can be used to directly measure the occupancy of the dot as a function of various other quantities like chemical potential, $\mu$, or temperature, $T$. We use $V_{plunger}$ ($V_p$) shown in in Fig.~\ref{fig:device} to locally control the chemical potential of the dot. Varying the potential applied to this gate $V_p$ - and by extension the chemical potential in the dot - is our primary technique to control the occupancy of the dot. Based on this protocol, we can decompose Eqn.~\ref{eqn:eqn1} into the following quantities which can be determined experimentally.
 \begin{equation}
 	\label{eqn:eqn2}
