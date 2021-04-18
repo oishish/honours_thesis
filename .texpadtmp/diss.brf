@@ -7,8 +7,12 @@
 \backcite {frolov_mirage}{{1}{1}{chapter.1}}
 \backcite {majorana_fractional}{{1}{1}{chapter.1}}
 \backcite {nikentropy}{{1}{1}{chapter.1}}
+\backcite {pablo_entropy}{{2}{1}{chapter.1}}
+\backcite {afy_entropy}{{2}{1}{chapter.1}}
+\backcite {pomeranchuk1950theory}{{2}{1}{chapter.1}}
 \backcite {schroeder}{{3}{2.1}{equation.2.1.1}}
-\backcite {ashcroftmermin}{{4}{2.1}{equation.2.1.1}}
-\backcite {spintocharge}{{4}{2.1}{equation.2.1.1}}
+\backcite {schroeder}{{4}{2.2}{equation.2.2.2}}
+\backcite {ashcroftmermin}{{4}{2.2}{equation.2.2.2}}
+\backcite {spintocharge}{{4}{2.2}{equation.2.2.2}}
 \backcite {Kouwenhoven1997}{{9}{3.2}{section.3.2}}
 \backcite {Baer}{{15}{3.6}{figure.caption.13}}
