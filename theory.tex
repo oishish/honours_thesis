@@ -4,7 +4,7 @@
 \chapter{Entropy in mesoscopic systems}
 \label{ch:Theory}
 
-In this chapter, we review the theoretical underpinnings for the measurements that were completed. First, we discuss some of the theory behind single and double quantum dots and the relevant energy scales for these systems. We then proceed to a review of entropy in quantum systems, finally discussing the Maxwell relation used to make the measurements of entropy presented in this thesis and those presented by Hartman et al.
+In this chapter, we review the theoretical underpinnings for the measurements that were completed. We then proceed to a review of entropy in quantum systems, finally discussing the Maxwell relation used to make the measurements of entropy presented in this thesis and those presented by Hartman et al.
 
 \section{Entropy of quantum systems}
 The classical description of entropy comes in the form of the Boltzmann entropy
@@ -12,9 +12,9 @@ The classical description of entropy comes in the form of the Boltzmann entropy
 	\label{eqn:b_entropy}
 	S = k_b \ln W.
 \end{equation}
-Here, $W$ is defined by the number of available microstates of the system \cite{schroeder}. In the context of simple quantum systems at $T$ close to zero (such that excited states are unattainable), it is useful to consider this quantity, $W$, as the degeneracy, $d$, of the ground state of the system~\cite{mcquarrie}. 
+Here, $W$ is defined by the number of available microstates of the system \cite{schroeder}. In the context of quantum systems at $T$ close to zero (such that excited states are unattainable), it is useful to consider this quantity, $W$, as the degeneracy, $d$, of the ground state of the system~\cite{mcquarrie}. 
 
-As a simple example, and closely related to the results from this thesis, consider a single potential well that may be occupied by some small number of electrons as illustrated in Fig~\ref{fig:potential_wells} (a).  In the example outlined Fig~\ref{fig:potential_wells} (a), the possible occupations, $n$, of the well are shown. This system can also be thought of, very approximately, as a model for a single atom with excited states unreachable at low enough $T$~\footnote{In practice, potential wells like this can be fabricated on a mesoscopic scale -- much larger than any atom -- to study the behavior of electrons in ``artificial" atoms cf. Ch. ~\ref{ch:Methods}. These structures are called quantum dots.}. In the $n = 0$ state the system has no degeneracy since there is only one state at ground state energy -- no electrons anywhere. However, in the $n=1$ state, the system develops a ground state degeneracy of $d = 2$ since the single electron will be in either a spin up or spin down state, both of which will be of the same energy. Finally, if a second electron is added to the system, the spin degeneracy of the system will break as the lowest energy state of the pair of electrons will be a spin singlet state disallowing net spin freedom of the system. 
+As an example, and closely related to the results from this thesis, consider a single potential well that may be occupied by some small number of electrons as illustrated in Fig~\ref{fig:potential_wells} (a).  In the example outlined Fig~\ref{fig:potential_wells} (a), the possible occupations, $n$, of the well are shown. This system can also be thought of, very approximately, as a model for a single atom with excited states unreachable at low enough $T$~\footnote{In practice, potential wells like this can be fabricated on a mesoscopic scale -- much larger than any atom -- to study the behavior of electrons in ``artificial" atoms cf. Ch. ~\ref{ch:Methods}. These structures are called quantum dots.}. In the $n = 0$ state the system has no degeneracy since there is only one state at ground state energy -- no electrons anywhere. However, in the $n=1$ state, the system develops a ground state degeneracy of $d = 2$ since the single electron will be in either a spin up or spin down state, both of which will be of the same energy. Finally, if a second electron is added to the system, the spin degeneracy of the system will break as the lowest energy state of the pair of electrons will be a spin singlet state disallowing net spin freedom of the system. 
 
 One can consider the change in entropy, $\Delta S$, of a given transition in the occupation of the potential well\footnote{For now, where this electron came from will be neglected.} like the transition from $n = 0 \to n = 1$ as shown in Fig~\ref{fig:potential_wells} (b). For this transition, $\Delta S = k_B \ln d_f - k_B \ln d_i = k_B \ln 2$ by Eqn.~\ref{eqn:b_entropy}.
 \begin{figure}[h]
@@ -41,7 +41,7 @@ The shift in the transition based on a change in entropy as summarized above can
 \end{equation}
 
 
-Qualitatively, this relation tells us that the change in entropy over the course of a transition in $N$ (e.g. from some $N$ to $N+1$ particles in a given system) can be expressed in terms of the shift of that transition (in chemical potential) as a function of temperature. As with all the Maxwell relations, there are is an additional constant-variable requirement -- pressure, $p$, cannot vary -- which will be discussed further in Ch.~\ref{ch:Methods}. To further illustrate this qualitative explanation, consider an integral form of the above relation.
+Qualitatively, this relation tells us that the change in entropy over the course of a transition in $N$ (e.g. from some $N$ to $N+1$ particles in a given system) can be expressed in terms of the shift of that transition (in chemical potential) as a function of temperature. As with all the Maxwell relations, there is an additional constant-variable requirement -- pressure, $p$, cannot vary -- which will be discussed further in Ch.~\ref{ch:Methods}. To further illustrate this qualitative explanation, consider an integral form of the above relation.
 
 \begin{equation}
 	\label{eqn:MRintegral}
@@ -52,17 +52,24 @@ In other words, by measuring the occupation of a system as a function of the che
 
 In Fig.~\ref{fig:potential_wells}, the change in entropy was related to a shift in the mid point of the occupation (of the system) as a function of chemical potential or $N(\mu)$ curve. This shift can also be thought of in terms of the change it would induce in Eqn.~\ref{eqn:MRintegral}. If one considers the approximate $dN/dT$ by looking at the difference between a `warmer' and `colder' curve in the figure, it can be noted that, if there is no shift in the center, $\frac{dN}{dT} (\mu)$ will be exactly antisymmetric and therefore integrate to 0. Whereas, in the case that is illustrated, this approximate $\frac{dN}{dT} (\mu)$  is not exactly antisymmetric and will integrate to a finite value.
 
-\section{Approximate form for a quantum dot coupled to a thermally broadened lead}
+\section{Occupation for a thermally broadened two-level transition}
+\label{sec:twolevel}
 
+For a simple, thermally broadened, two level transition, the following equation of occupation can be shown to be true~\cite{nikentropy}.
 \begin{equation}
 	\label{eqn:occupation}
-	N(\mu, \Theta) = 
+	N(\mu, T) = \frac{1}{2} \left( \tanh\left( \frac{\mu - \mu_{mid}(T)}{2k_B T}\right) + 1\right)
 \end{equation}
+
+By differentiating w.r.t. $T$ and multiplying by $\delta T$, an approximate form for the difference between the occupation curves in Fig.~\ref{fig:potential_wells} can be derived (valid in small $\delta T$ approximation). 
 
 \begin{equation}
 	\label{eqn:dndt}
-	d
+	\delta N \propto -\delta T \left( \frac{\mu - \mu_{mid}(T)}{2k_B T} - \frac{\Delta S}{2k_B} \right)\cosh^{-2}\left( \frac{\mu - \mu_{mid}(T)}{2k_B T}\right) + \text{const.}
 \end{equation}
+
+In previous measurements in the group Hartman et al. used this form to calculate $\Delta S$ directly from $\delta N$. However, an experimental technique for using Eqn.~\ref{eqn:MRintegral} is outlined in Sec.~\ref{sec:device} and used for the entirety of the measurements reported in the results. Eqn.~\ref{eqn:dndt} is less applicable to many more complicated systems, whereas Eqn.~\ref{eqn:MRintegral} is completely generic.
+
 
 \endinput
 
