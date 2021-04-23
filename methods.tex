@@ -3,71 +3,95 @@
 
 \chapter{Capacitively coupled double quantum dot}
 \label{ch:Methods}
-\section{Quantum dots in GaAs/AlGaAs heterostructures}
-\label{sec:qds}
 
-The focus of this section will be the theory of double (and single) quantum dots in the 2 dimensional electron gas hosted by AlGaAs/GaAs. The basis of this section will be the Fig. \ref{fig:dqd}. In addition, there will be a discussion of the energy scales at play in the system and those that are most important for our entropy measurements.
+This chapter begins with a discussion of quantum dots in GaAs/AlGaAs as well as discussing some of the relevant energy scales when creating double quantum dot systems. Next, the device used for measurements in this thesis is discussed, and the general measurement protocol is outlined. Finally, results are presented. 
 
-\begin{figure}[h]
-\centering
-\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/dqd_temp.eps}}
-\caption{The states of the double quantum dot system are mapped out by charge sensing the occupation of both dots. The color indicates the derivative of the current through the charge sensor. Sudden changes in this current indicate state changes in the two dots, with larger changes (seen as darker on this plot) indicating changes in the probe dot, and smaller changes (slightly lighter on this plot) indicating changes in states in the impurity dot. The large squares indicate regions of constant state in the two dots and are labelled by [occupation main dot, occupation impurity dot].}
-\label{fig:dqd}       % Give a unique label to the figure. 
-\end{figure}
+
+%The focus of this section will be the theory of double (and single) quantum dots in the 2 dimensional electron gas hosted by AlGaAs/GaAs. The basis of this section will be the Fig. \ref{fig:dqd}. In addition, there will be a discussion of the energy scales at play in the system and those that are most important for our entropy measurements.
 
 \section{The device and measurement protocol}
 \label{sec:device}
-The measurement protocol as laid out in Fig.~\ref{fig:num_int} requires the ability to vary the temperature of the system. However, in practice, instability in the exact locations of $V_{mid}$ makes it difficult to accurately determine $\Delta S$ of the hot and cold curves independently. Because of this instability, it is necessary to oscillate between hot and cold as we measure over the transition. With this measurement scheme, any heating not localized on the device is not useful as it will take too long to equilibrate through the entirety of whatever larger system is being heated.
 
-We are pursuing multiple possible solutions for fast localized heating. The first is the technique employed by Hartman et al. and used in previous device designs which involves directly injecting hot electrons into the electron reservoir coupled to the probe dot. This can be done by running a current through a QPC (tuned to be fairly resistive) pointed into the electron reservoir. When the current is turned off the heat in the electron reservoir is dissipated by coupling to phonons and connection to a `cold' ground - i.e. a much larger bath of electrons at lower temperature. By turning on and off the current running through this resistive heater QPC, we can locally control the temperature of the electrons in the system. Another possible technique that could be employed to allow for fast localized heating is heating the crystalline lattice of the substrate. With this technique, the electron-phonon coupling in the electron reservoir would ensure that the electrons quickly thermalize. Resistive heating would most likely be used to heat the phonons, either by electron phonon coupling using a QPC which is electrically insulated from the device, or by building a resistor on top of the substrate using a very long wire with some finite resistance.
+In Ch.~\ref{ch:Theory}, the $\Delta S$ of transition in a potential well from $0 \to 1$ electrons was discussed and it was noted that potential wells like the one described could be built in practice by creating something called a quantum dot. Quantum dots can be built from a wide variety of materials~\cite{bera2010quantum}, and offer a mesoscopic scale realization of something like an ``artifical" atom. For measurements in this thesis, tunable quantum dots are fabricated in a \ac{2DEG} which forms in an AlGaAs/GaAs substrate. In Fig~\ref{fig:qd1} a schematic shows a cross section through such a substrate. When the substrate is cooled to low enough temperature, the bandgap in GaAs and AlGaAs prevents conduction, however, at the interface of the two materials, a sheet of conduction electrons forms which is confined to only two dimension. By adding top gates, as illustrated in Fig~\ref{fig:qd1}, and applying static voltages to these top gates, this sheet of electrons can be further confined to form many structures including quantum dots, quantum wires, and quantum point contacts~\cite{manfra2014molecular}. 
+\begin{figure}[h]
+\centering
+\resizebox{0.7\textwidth}{!}{\includegraphics{figures/pdfs/algaas.eps}}
+\caption{A cross sectional view of the AlGaAs/GaAs substrate used in measurements for this thesis. A stack of GaAs and AlGaAs forms a \ac{2DEG} at their interface. Ohmic contact is made to the \ac{2DEG} by a thermal annealing process with Ni/Au/Ge further discussed in~\ref{sec:recipes}. Gold (Au) top gates are defined on the surface of the substrate which allow for local control of the density of the \ac{2DEG}.}
+\label{fig:qd1}       % Give a unique label to the figure. 
+\end{figure}
 
-Devices to complete this experiment will be built on GaAs/AlGaAs heterostructure which hosts a 2DEG (see Fig \ref{fig:algaas}). The 2DEG is electrostatically gated to allow for local control of the electron density i.e. by applying an electric field with an electrically isolated gate, the electron density of the 2DEG is controlled beneath this gate \cite{Kouwenhoven1997}. Ohmic contact is made with the 2DEG via a diffusive process of Ni/Au/Ge through the substrate. Gating structures will be defined using standard photolithography and electron beam lithography techniques.  
-
-The next part of this section will focus on breaking down the various gates in use on the device and their roles. Relevant length scales, etc. will be discussed. This section is focussed around Fig. \ref{fig:device}. Connections will be made to the previous section, pointing out the energy scales in our system and how they were calculated.
+To study the entropy of a capacitively coupled system, we have fabricated a double quantum dot system in an AlGaAs/GaAs substrate hosting such a \ac{2DEG}. In Fig.~\ref{sec:device}, a top-down image of this device is shown. Two quantum dots are defined, labelled main and impurity dot. 
 
 \begin{figure}[h]
 \centering
-\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/small_dots_2.eps}}
-\caption{ A top-down SEM image of the device measured in this experiment. Lighter gold regions are the gold gates, while darker regions are the GaAs substrate. A single quantum dot (right hand side) is probed by the leftmost dot whose occupation is measured using $I_{sens}$. In this device, temperature oscillations occur across electrons in a reservoir connected to the probe dot heated via a small thermocurrent through an adjacent quantum point contact. $V_{ACC}$ is used to control the chemical potential, $\mu$, in the probe dot. In the right hand of dot, similar gate structures, labelled $V_{IP}$ allow for the system to be tuned to be tuned degenerate with the probe dot. The X indicates ohmic contact to the 2DEG. The light red section indicates the thermal reservoir of the system. Greyed out gates were not used in this experiment.}
+\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/device2.eps}}
+\caption{ A top-down SEM image of the device measured in this experiment. Lighter gold regions are the gold gates, while darker regions are the GaAs substrate. A single quantum dot (right hand side) is probed by the leftmost dot whose occupation is measured using $I_{sense}$. In this device, temperature oscillations occur across electrons in a reservoir connected to the probe dot heated via a small thermocurrent through an adjacent quantum point contact. $V_{ACC}$ is used to control the chemical potential, $\mu$, in the probe dot. In the right dot, similar gate structures, labelled $V_{IP}$ allow for the system to be tuned to be tuned degenerate with the probe dot. The X indicates ohmic contact to the 2DEG. The light red section indicates the thermal reservoir of the system. Greyed out gates were not used in this experiment.}
 \label{fig:device}       % Give a unique label to the figure. 
 \end{figure}
+
+
+In practice, to measure the entropy of this system using the integral from Eqn.~\ref{eqn:MR} we have a few requirements. First, we assumed constant pressure in the Maxwell relation. In the context of a \ac{2DEG} with which our measurements are conducted, the dominating pressure at temperatures below the Fermi temperature, $T_F \approx 100$K is the degeneracy pressure~\cite{ashcroftmermin}, an incompressibility emerging from the Pauli exclusion principle disallowing fermions from occupying the same quantum state. In addition, by keeping energy fluctuations due to thermal energy, $k_bT$, much smaller than the spacing between energy levels in the dot, we ensure that random temperature fluctuations do not produce unpredictable energy level occupation.
+
+In addition, the primary requirement for using Eqn.~\ref{eqn:MRintegral} is the ability to measure occupation of the system as a function of chemical potential while varying temperature. In this device, the occupation of the main dot is the only measured quantity\footnote{See Sec.~\ref{sec:artifacts}}. We measure $N$ of the main quantum dot by measuring the current $I_{sense}$ through a charge sensing \ac{QPC} seen in Fig.~\ref{fig:device}. Because of the proximity of this \ac{QPC}, referred to as the charge sensor, to the main dot very small electrostatic changes in the main dot affect the conduction across the charge sensor~\cite{spintocharge}. As such, a larger $I_{sense}$ indicates fewer electrons in the main dot, while a smaller $I_{sense}$ indicates more electrons in the main dot. In effect, this means that $I_{sense}$ can be used to directly measure the occupancy of the dot as a function of various other quantities like chemical potential, $\mu$, or temperature, $T$. We use $V_{ACC}$ shown in in Fig.~\ref{fig:device} to locally control the chemical potential of the dot. Varying the electrostatic potential applied to this gate $V_{ACC}$ - and by extension the chemical potential in the dot - is our primary technique to control the occupancy of the dot. Based on this protocol, we can decompose Eqn.~\ref{eqn:MRintegral} into the following quantities which can be determined experimentally.
+\begin{equation}
+	\label{eqn:eqn2}
+	\Delta S = - \int_{\mu_1}^{\mu_2} \frac{dN}{dI_{sense}} \frac{dI_{sense}}{dT} \,\,  d \mu
+\end{equation}
+
+This integral tells us that we can measure the change in entropy between two chemical potentials in the dot by measuring two quantities: $dN/dI_{sense}$, and $dI_{sense}/dT$ as a function of chemical potential. The first quantity, $dN/dI_{sense}$ is just a scaling factor that can be independently experimentally determined and does not depend on $\mu$. In fact, $dN/dI_{sense}$ simply represents the current amplitude of a transition from $N \to N+1$ electrons in the dot. The final quantity $dI_{sense}/dT$ does depend on $\mu$ and so must be measured as $\mu$ is changed. Intuitively, $dI_{sense}/dT$ is a measure of the difference between the occupancy of the dot at higher $T$ and lower $T$ times a scaling factor $\delta T$ representing the change in temperature.\footnote{See Sec.~\ref{sec:electrontemp} for a more in depth consideration of $\delta T$ in gate voltage.} This difference between hot and cold curves is illustrated by the shading on the plots in Fig.~\ref{fig:num_int}. 
+\begin{figure}[h]
+\centering
+\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/numerical_integrated.eps}}
+\caption{In (a) and (b) we show two examples of the measurement protocol where the occupancy of the probe dot is measured using $I_{sense}$. In each case, the occupancy is swept from $N - 1$ to $N$ electrons both at a higher temperature (red) and a lower temperature (blue), however in (a) this change in $N$ does not correspond to an entropy change in the system whereas in (b) we see a positive change in entropy of the system due to this change in occupancy. The inlaid plots show the cumulative integral of $d I_{sense}$ -- or the difference between hot and cold $I_{sense}$ curves. The entropy change of the system is measured by the value of this integral after the completion of this transition. Figure adapted from ~\cite{nikentropy}.}\label{fig:num_int}       % Give a unique label to the figure. 
+\end{figure}
+
+In previous work in the group, Hartman et al.~\cite{nikentropy} used a very similar process except harnessing Eqn.~\ref{eqn:dndt} which allows for $dI_{sense}/dT$ to be fit directly so long as the lineshape of the transition is dominated by thermal broadening in the Fermi distribution of the reservoir. Continued work has focussed on extending the single dot findings to less ideal regimes using Eqn~\ref{eqn:eqn2}~\cite{child2020entropy}. However, the remainder of the results and discussion will focus on measurements of entropy in a double quantum dot system.
+
+\section{Entropy of double quantum dot system}
+\label{sec:dqd}
+
+In Fig.~\ref{fig:device}, a second quantum dot, labelled impurity dot is shown to the right of the main dot. The occupation of this impurity dot can be tuned by changing the potential on $V_{IP}$, effectively changing the chemical potential of the dot. Although the charge sensing \ac{QPC} is farther from this second impurity quantum dot, small changes in $I_{sense}$ can still be detected when the occupation of the impurity dot changes. In Fig.~\ref{fig:qdpanel2} the states of the combined system are mapped out by plotting $dI_{sense}/dV_{IP}$ which changes abruptly when occupation shifts occur in either of the dots. The states are labelled by [occupation of main dot, occupation of impurity dot]. Using these transitions, the states of both dots are mapped out over a wide range of gate voltages in Fig.~\ref{fig:qdpanel2} (a), then zoomed in on the 10, 01 crossing in (b).
+
+\begin{figure}[h]
+\centering
+\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/QD_panel2.eps}}
+\caption{In (a) the states of the double quantum dot system are mapped out by charge sensing the occupation of both dots. The color indicates the derivative of the current through the charge sensor. Sudden changes in this current indicate state changes in the two dots, with larger changes (seen as darker on this plot) indicating changes in the main dot, and smaller changes (slightly lighter on this plot) indicating changes in states in the impurity dot. The large squares indicate regions of constant state in the two dots and are labelled by [occupation main dot, occupation impurity dot]. In (b), a zoomed in view on the crossing (white circle in plot (a)) of the $0 \to 1$ transitions in the two dots is shown.}
+\label{fig:qdpanel2}       % Give a unique label to the figure. 
+\end{figure}
+
+In Fig.~\ref{fig:qdpanel2} (b), the vertical line jagged indicates a transition in the main dot. Along this transition (as $V_{IP}$ changes) one can consider the change in entropy of the entire system as the main dot transitions from $0 \to 1$ electrons shown in Table~\ref{tbl:entropy} (neglecting charge degeneracy).
+\begin{center}
+	\begin{tabular}{ |c|c| } 
+		\hline
+		Transition & $\Delta S_{sys}$ [$k_B$]  \\ \hline\hline
+		$00 \to 10$ & $\ln 2$  \\ 
+		$01 \to 10$ & 0 \\ 
+		$01 \to 11$ & $\ln 2$ \\ 
+		\hline
+		\end{tabular}
+		\captionof{table}{Entropy along 01, 10 transition}\label{tbl:entropy}
+\end{center}
+Notably, anywhere along this transition, the change in entropy if one considers the main dot only will be $\Delta S = k_B \ln 2$ since it always transitioning from a no-occupancy state with no spin degeneracy to a single electron state with a degeneracy of two.
 
 \section{Results}
 \label{sec:results}
 
-The primary results are summarized in Fig. \ref{fig:results1}. These show the main focus of this thesis - that the entropy of a capacitively coupled quantum system can be probed directly within this scheme. More to be included in this section is a full explanation of these results. Ongoing work is going on probing the system in interesting regimes - i.e. looking for entropic signatures of the Kondo effect. It is possible that results relating to the Kondo effect will be found before this thesis is submitted. 
 
-More specifically, we have shown that we can measure a change in entropy in the second, capacitively coupled quantum dot, as the electron in the probe dot forces the electron in the second dot out. Rather than seeing a constant entropy at $\ln 2$, we see our $\Delta S$ go to zero in the center of the 01 $\to$ 10 transition, when the probe dot pushes the second quantum dot from a degeneracy of two (1 occupied electron, either spin up or spin down) to a degeneracy of 1 (0 electrons). This is a net chance in entropy of -$\ln 2$ in the second dot, and a net change in entropy of +$\ln 2$ in the probe dot, which cancel one another out.
 \begin{figure}[h]
 \centering
 \resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/large_gamma_full_figure.eps}}
 \caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots with $\Gamma_{main}/T < 1 < \Gamma_{imp}/T$. In (a) the dark region indicates the transition in the main quantum dot. Double dot states are labelled as [Occupation main dot, occupation impurity dot]. The $\Delta S$ of the transition in the main dot is plotted for the double dot transition crossing. In the 0,0 $\to$ 1,0 regime, the $\Delta S$ is found to be roughly $\ln 2 \approx 0.69$ as expected from the spin degeneracy in the probe dot. In the central regime, where there is a full 0,1 $\to$ 1,0 transition, entropy is found to be around $\ln 2 - \ln2 = 0$ since the spin degeneracy of the impurity dot is simply replaced by the spin degeneracy in the probe dot. In (b) the $\Delta I$ between the cold and hot curves plotted in (c) are shown. In (c) the shift in $V_{mid}$ between 70 mK and 50 mK traces can clearly be seen to vary depending on $\Delta S$.}
-
-\label{fig:results1}       % Give a unique label to the figure. 
+\label{fig:largeg}       % Give a unique label to the figure. 
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/temp_s_shape_bw.eps}}
-\caption{ Data from an older device exhibits a change in entropy as degeneracy of an unknown external impurity is adjusted. The demonstrates the potential for measuring the entropy of capacitively coupled systems.}
-
-\label{fig:sshape}       % Give a unique label to the figure. 
+\resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/small_gamma_full_figure.eps}}
+\caption{}
+\label{fig:smallg}       % Give a unique label to the figure. 
 \end{figure}
 
 
-
-\section{Comparison to theory}
-\label{sec:discussion}
-
-The focus of this section will be a comparison between Fig. \ref{fig:results1} and Fig. \ref{fig:yigal_theory} and a qualitative explanation for the effects that we see. In addition, a discussion of the techniques used to make the theoretical predictions.
-
-\begin{figure}[h]
-\centering
-\resizebox{\textwidth}{!}{\includegraphics{figures/pdfs/yigal_theory.eps}}
-\caption{Theoretical calculations of $\Delta S$ across the 01 $\to$ 10 transition are show for various levels of interdot capacitive coupling to temperature ratios. Excellent alignment with experiment is achieved in the U/T = 6 are achieved.}
-
-\label{fig:yigal_theory}       % Give a unique label to the figure. 
-\end{figure}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -75,13 +99,6 @@ The focus of this section will be a comparison between Fig. \ref{fig:results1} a
 Not yet sure what the focus of this section will be, still thinking about it. 
 
 
-\begin{figure}[h]
-\centering
-\resizebox{0.5\textwidth}{!}{\includegraphics{figures/pdfs/algaas.eps}}
-\caption{ A cross section of the GaAs/AlGaAs heterostructure hosting a 2-dimensional electron gas (2DEG) formed at the boundary between an AlGaAs and GaAs layer where the conductance band briefly falls below the Fermi energy \cite{Baer}. Gold gates allow local control of the electron density of the 2DEG. Ohmic contact to the 2DEG is established by a diffusion of a combination of Ni/Au/Ge from the surface to the 2DEG.}
-
-\label{fig:algaas}       % Give a unique label to the figure. 
-\end{figure}
 
 \endinput
 
