@@ -47,7 +47,7 @@ This integral tells us that we can measure the change in entropy between two che
 
 In previous work in the group, Hartman et al.~\cite{nikentropy} used a very similar process except harnessing Eqn.~\ref{eqn:dndt} which allows for $dI_{sense}/dT$ to be fit directly so long as the lineshape of the transition is dominated by thermal broadening in the Fermi distribution of the reservoir. Continued work has focussed on extending the single dot findings to less ideal regimes using Eqn~\ref{eqn:eqn2}~\cite{child2020entropy}. However, the remainder of the results and discussion will focus on measurements of entropy in a double quantum dot system.
 
-\section{Entropy of double quantum dot system}
+\section{Entropy of a double quantum dot system}
 \label{sec:dqd}
 
 In Fig.~\ref{fig:device}, a second quantum dot, labelled impurity dot is shown to the right of the main dot. The occupation of this impurity dot can be tuned by changing the potential on $V_{IP}$, effectively changing the chemical potential of the dot. Although the charge sensing \ac{QPC} is farther from this second impurity quantum dot, small changes in $I_{sense}$ can still be detected when the occupation of the impurity dot changes. In Fig.~\ref{fig:qdpanel2} the states of the combined system are mapped out by plotting $dI_{sense}/dV_{IP}$ which changes abruptly when occupation shifts occur in either of the dots. The states are labelled by [occupation of main dot, occupation of impurity dot]. Using these transitions, the states of both dots are mapped out over a wide range of gate voltages in Fig.~\ref{fig:qdpanel2} (a), then zoomed in on the 10, 01 crossing in (b).
@@ -61,42 +61,43 @@ In Fig.~\ref{fig:device}, a second quantum dot, labelled impurity dot is shown t
 
 In Fig.~\ref{fig:qdpanel2} (b), the vertical line jagged indicates a transition in the main dot. Along this transition (as $V_{IP}$ changes) one can consider the change in entropy of the entire system as the main dot transitions from $0 \to 1$ electrons shown in Table~\ref{tbl:entropy} (neglecting charge degeneracy).
 \begin{center}
-	\begin{tabular}{ |c|c| } 
+	\begin{tabular}{ |c|c|c| } 
 		\hline
-		Transition & $\Delta S_{sys}$ [$k_B$]  \\ \hline\hline
-		$00 \to 10$ & $\ln 2$  \\ 
-		$01 \to 10$ & 0 \\ 
-		$01 \to 11$ & $\ln 2$ \\ 
+		Transition & $\Delta S_{sys}$ [$k_B$] & $\Delta S_{main}$ [$k_B$]  \\ \hline\hline
+		$00 \to 10$ & $\ln 2$ & $\ln 2$ \\ 
+		$01 \to 10$ & 0       & $\ln 2$ \\ 
+		$01 \to 11$ & $\ln 2$ & $\ln 2$ \\ 
 		\hline
 		\end{tabular}
 		\captionof{table}{Entropy along 01, 10 transition}\label{tbl:entropy}
 \end{center}
-Notably, anywhere along this transition, the change in entropy if one considers the main dot only will be $\Delta S = k_B \ln 2$ since it always transitioning from a no-occupancy state with no spin degeneracy to a single electron state with a degeneracy of two.
+Notably, anywhere along this transition, the change in entropy if one considers the main dot only will be $\Delta S = k_B \ln 2$ since it is always transitioning from a no-occupancy state with no spin degeneracy to a single electron state with a spin degeneracy of two. However, in the case of the $01 \to 10$ transition, the finite capacitive coupling between the dots causes the impurity dot to be pushed from occupied to unoccupied as the main dot goes from unoccupied to occupied. This implies a clear discrepancy between $\Delta S_{sys}$ and $\Delta S_{main}$ which will clearly indicate if this protocol continues to work, experimentally, for capacitively coupled systems.
 
-\section{Results}
-\label{sec:results}
-
-
+In the case where the impurity dot is tuned to a sufficiently strong tunnel coupling to the reservoir, $\Gamma_{imp}$, that the charge degeneracy during the transition is suppressed, the $\Delta S$ matches the predicted values for $\Delta S_{sys}$ in Table~\ref{tbl:entropy}. This is shown in Fig.~\ref{fig:largeg} where over the course of the transition, $\Delta S$ goes from $k_B \ln 2$ to 0 then back to $k_B \ln 2$.
 \begin{figure}[h]
 \centering
 \resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/large_gamma_full_figure.eps}}
 \caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots with $\Gamma_{main}/T < 1 < \Gamma_{imp}/T$. In (a) the dark region indicates the transition in the main quantum dot. Double dot states are labelled as [Occupation main dot, occupation impurity dot]. The $\Delta S$ of the transition in the main dot is plotted for the double dot transition crossing. In the 0,0 $\to$ 1,0 regime, the $\Delta S$ is found to be roughly $\ln 2 \approx 0.69$ as expected from the spin degeneracy in the probe dot. In the central regime, where there is a full 0,1 $\to$ 1,0 transition, entropy is found to be around $\ln 2 - \ln2 = 0$ since the spin degeneracy of the impurity dot is simply replaced by the spin degeneracy in the probe dot. In (b) the $\Delta I$ between the cold and hot curves plotted in (c) are shown. In (c) the shift in $V_{mid}$ between 70 mK and 50 mK traces can clearly be seen to vary depending on $\Delta S$.}
-\label{fig:largeg}       % Give a unique label to the figure. 
+\label{fig:largeg}        
 \end{figure}
+
+In effect, this shows exactly what is expected since thermodynamically, it should not matter what component of the system is being measured if the entire system is undergoing a transition. Another way to understand this is by Fig.~\ref{fig:largeg} (c) which shows the transition in occupation of the main dot at various points in the double dot state digram (a). Each is plotted with both a warm transition and a cold transition. Qualitatively, it is easy to see the relative shift between 50 and 70 mK data like in Fig.~\ref{fig:potential_wells} in the top (purple) transition, however in the center (green) transition, this shift is absent. Although all three transitions are only measurements on the main dot and so are nearly identical regardless of the occupation or change in occupation of the impurity dot, they represent very different state transitions in the system. In the top plot, \textit{only} the main quantum dot is undergoing a transition, whereas in the center plot the larger system is undergoing a transition $01 \to 10$. Although this larger state transition is not detectable in the $N(\mu)$ curve or as it is collected experimentally, the $I_{sense} (V_{ACC})$ signal, it is clear in the $dN/dT$ signal. 
+
+Data was also collected in the case that the impurity dot is less strong coupled to the reservoir, or $\Gamma_{imp}/T < 1$, shown in Fig.~\ref{fig:smallg}. In this case, charge degeneracy in the impurity dot becomes accessible allowing for states with degeneracy of 3 when the impurity dot is between occupied and unoccupied, and also spin degenerate. In this case, one should theoretically expect to see a $\Delta S_{sys} = \ln 2 - ln 3 \approx -0.4$ and a $\Delta S_{sys} = \ln3 \approx 1.1$. In Fig.~\ref{fig:smallg} (b), theoretical predictions are plotted on top of the experimental data, showing approximate agreement. It is believed the disagreement originates from back action noise affects, which are further summarized in Sec.~\ref{sec:back}.
 
 \begin{figure}[h]
 \centering
 \resizebox{1\textwidth}{!}{\includegraphics{figures/pdfs/small_gamma_full_figure.eps}}
-\caption{}
-\label{fig:smallg}       % Give a unique label to the figure. 
+\caption{Entropy along the 0,1 $\to$ 1,0 transition in the pair of dots with $\Gamma_{main}/T \approx \Gamma_{imp}/T < 1$. In (a), $dI_{sense}/dV_{ACC}$ indicates the state of both dots as a function of $V_{IP}$. In (b), theoretical calculations of $\Delta S$ are plotted along with the experimental values, error bars showing 95\% confidence interval. In (c) $dN/dT$ in units of $dI_{sense}/dT$ is plotted.}
+\label{fig:smallg}      
 \end{figure}
-
 
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-Not yet sure what the focus of this section will be, still thinking about it. 
+Not yet sure what the focus of this section will be, still thinking about it.
+
 
 
 
